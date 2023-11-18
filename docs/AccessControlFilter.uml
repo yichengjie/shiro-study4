@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.shiro.web.filter.AccessControlFilter</OriginalElement>
+  <nodes>
+    <node x="398.0" y="180.0">org.apache.shiro.web.servlet.ShiroFilter</node>
+    <node x="215.0" y="100.0">org.apache.shiro.web.servlet.AdviceFilter</node>
+    <node x="0.0" y="335.0">org.apache.shiro.web.servlet.ProxiedFilterChain</node>
+    <node x="0.0" y="100.0">org.apache.shiro.web.filter.PathConfigProcessor</node>
+    <node x="369.0" y="100.0">org.apache.shiro.web.servlet.AbstractShiroFilter</node>
+    <node x="84.25" y="0.0">org.apache.shiro.web.servlet.ServletContextSupport</node>
+    <node x="97.25" y="180.0">org.apache.shiro.web.filter.PathMatchingFilter</node>
+    <node x="488.875" y="0.0">javax.servlet.Filter</node>
+    <node x="313.25" y="0.0">org.apache.shiro.util.Nameable</node>
+    <node x="97.25" y="260.0">org.apache.shiro.web.filter.AccessControlFilter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.shiro.web.servlet.AbstractShiroFilter" target="org.apache.shiro.util.Nameable" relationship="REALIZATION">
+      <point x="45.25" y="-15.0" />
+      <point x="504.75" y="80.0" />
+      <point x="532.875" y="80.0" />
+      <point x="532.875" y="50.0" />
+      <point x="375.25" y="50.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.ShiroFilter" target="org.apache.shiro.web.servlet.AbstractShiroFilter" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.AbstractShiroFilter" target="javax.servlet.Filter" relationship="REALIZATION">
+      <point x="45.25" y="-15.0" />
+      <point x="504.75" y="80.0" />
+      <point x="532.875" y="80.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.filter.PathMatchingFilter" target="org.apache.shiro.web.filter.PathConfigProcessor" relationship="REALIZATION">
+      <point x="-46.25" y="-15.0" />
+      <point x="143.5" y="155.0" />
+      <point x="97.5" y="155.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.AdviceFilter" target="javax.servlet.Filter" relationship="REALIZATION">
+      <point x="33.5" y="-15.0" />
+      <point x="315.5" y="80.0" />
+      <point x="375.25" y="80.0" />
+      <point x="375.25" y="70.0" />
+      <point x="532.875" y="70.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.AbstractShiroFilter" target="org.apache.shiro.web.servlet.ServletContextSupport" relationship="GENERALIZATION">
+      <point x="-45.25" y="-15.0" />
+      <point x="414.25" y="60.0" />
+      <point x="188.75" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.AdviceFilter" target="org.apache.shiro.web.servlet.ServletContextSupport" relationship="GENERALIZATION">
+      <point x="-33.5" y="-15.0" />
+      <point x="248.5" y="60.0" />
+      <point x="188.75" y="60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.filter.AccessControlFilter" target="org.apache.shiro.web.filter.PathMatchingFilter" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.filter.PathMatchingFilter" target="org.apache.shiro.web.servlet.AdviceFilter" relationship="GENERALIZATION">
+      <point x="46.25" y="-15.0" />
+      <point x="236.0" y="155.0" />
+      <point x="282.0" y="155.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.servlet.AdviceFilter" target="org.apache.shiro.util.Nameable" relationship="REALIZATION">
+      <point x="33.5" y="-15.0" />
+      <point x="315.5" y="80.0" />
+      <point x="375.25" y="80.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="288.5" y="182.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

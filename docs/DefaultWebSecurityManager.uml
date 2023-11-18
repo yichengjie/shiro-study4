@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.shiro.web.mgt.DefaultWebSecurityManager</OriginalElement>
+  <nodes>
+    <node x="230.08636363636361" y="494.0">org.apache.shiro.mgt.SessionsSecurityManager</node>
+    <node x="217.58636363636361" y="410.0">org.apache.shiro.mgt.AuthorizingSecurityManager</node>
+    <node x="411.3363636363636" y="0.0">org.apache.shiro.authz.Authorizer</node>
+    <node x="233.58636363636361" y="578.0">org.apache.shiro.mgt.DefaultSecurityManager</node>
+    <node x="207.08636363636361" y="326.0">org.apache.shiro.mgt.AuthenticatingSecurityManager</node>
+    <node x="0.0" y="80.0">org.apache.shiro.util.Destroyable</node>
+    <node x="546.0" y="160.0">org.apache.shiro.web.mgt.WebSecurityManager</node>
+    <node x="155.99999999999994" y="80.0">org.apache.shiro.cache.CacheManagerAware</node>
+    <node x="375.99999999999994" y="80.0">org.apache.shiro.event.EventBusAware</node>
+    <node x="237.08636363636361" y="242.0">org.apache.shiro.mgt.RealmSecurityManager</node>
+    <node x="557.0" y="80.0">org.apache.shiro.mgt.SecurityManager</node>
+    <node x="230.58636363636361" y="160.0">org.apache.shiro.mgt.CachingSecurityManager</node>
+    <node x="556.3363636363636" y="0.0">org.apache.shiro.authc.Authenticator</node>
+    <node x="724.3363636363636" y="0.0">org.apache.shiro.session.mgt.SessionManager</node>
+    <node x="334.58636363636367" y="660.0">org.apache.shiro.web.mgt.DefaultWebSecurityManager</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.shiro.web.mgt.DefaultWebSecurityManager" target="org.apache.shiro.mgt.DefaultSecurityManager" relationship="GENERALIZATION">
+      <point x="-63.00000000000006" y="-15.0" />
+      <point x="397.5863636363636" y="634.0" />
+      <point x="343.5863636363636" y="634.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.SecurityManager" target="org.apache.shiro.authc.Authenticator" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="642.0" y="55.0" />
+      <point x="630.3363636363636" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.DefaultSecurityManager" target="org.apache.shiro.mgt.SessionsSecurityManager" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.RealmSecurityManager" target="org.apache.shiro.mgt.CachingSecurityManager" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.CachingSecurityManager" target="org.apache.shiro.util.Destroyable" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="343.5863636363636" y="135.0" />
+      <point x="68.0" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.CachingSecurityManager" target="org.apache.shiro.event.EventBusAware" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="343.5863636363636" y="135.0" />
+      <point x="454.49999999999994" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.AuthorizingSecurityManager" target="org.apache.shiro.mgt.AuthenticatingSecurityManager" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.SecurityManager" target="org.apache.shiro.authz.Authorizer" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="642.0" y="55.0" />
+      <point x="473.8363636363636" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.mgt.WebSecurityManager" target="org.apache.shiro.mgt.SecurityManager" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="647.0" y="135.0" />
+      <point x="684.5" y="135.0" />
+      <point x="42.5" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.SessionsSecurityManager" target="org.apache.shiro.mgt.AuthorizingSecurityManager" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.CachingSecurityManager" target="org.apache.shiro.cache.CacheManagerAware" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="343.5863636363636" y="135.0" />
+      <point x="255.99999999999994" y="135.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.web.mgt.DefaultWebSecurityManager" target="org.apache.shiro.web.mgt.WebSecurityManager" relationship="REALIZATION">
+      <point x="62.99999999999994" y="-15.0" />
+      <point x="523.5863636363636" y="634.0" />
+      <point x="647.0" y="634.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.CachingSecurityManager" target="org.apache.shiro.mgt.SecurityManager" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="343.5863636363636" y="135.0" />
+      <point x="599.5" y="135.0" />
+      <point x="-42.5" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.SecurityManager" target="org.apache.shiro.session.mgt.SessionManager" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="642.0" y="55.0" />
+      <point x="806.8363636363636" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.apache.shiro.mgt.AuthenticatingSecurityManager" target="org.apache.shiro.mgt.RealmSecurityManager" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="445.0" y="345.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
