@@ -5,3 +5,8 @@ spring:
     url: jdbc:mysql://localhost:3306/shiro_study_simple?charsetEncoding=UTF-8
     username: root
     password: root
+  ### jsp definition
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .jsp
