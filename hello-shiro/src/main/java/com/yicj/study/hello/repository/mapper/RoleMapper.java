@@ -2,6 +2,9 @@ package com.yicj.study.hello.repository.mapper;
 
 import com.yicj.study.hello.repository.entity.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author yichengjie
@@ -11,6 +14,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface RoleMapper extends BaseMapper<Role> {
 
+    List<Role> listByUserId(@Param("userId") Integer userId) ;
 }
 
 

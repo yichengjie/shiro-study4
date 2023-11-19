@@ -5,13 +5,9 @@
 <mapper namespace="com.yicj.study.hello.repository.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.yicj.study.hello.repository.entity.User">
-        <id property="uid" column="id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
-        <collection property="roles" ofType="com.yicj.study.hello.repository.entity.Role">
-            <id property="rid" column="rid" />
-            <result property="rname" column="rname" />
-        </collection>
     </resultMap>
 
     <sql id="Base_Column_List">

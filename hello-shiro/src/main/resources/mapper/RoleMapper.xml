@@ -5,16 +5,18 @@
 <mapper namespace="com.yicj.study.hello.repository.mapper.RoleMapper">
 
     <resultMap id="BaseResultMap" type="com.yicj.study.hello.repository.entity.Role">
-        <id property="rid" column="id" jdbcType="INTEGER"/>
-        <result property="rname" column="rname" jdbcType="VARCHAR"/>
-        <collection property="permissions" ofType="com.yicj.study.hello.repository.entity.Permission">
-            <id property="pid" column="pid" />
-            <result property="name" column="name" />
-            <result property="url" column="url" />
-        </collection>
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,name
     </sql>
+
+    <select id="listByUserId" resultType="com.yicj.study.hello.repository.entity.Role">
+        select a.id, a.name
+        from sys_role a, sys_user_role b
+        where a.id = b.role_id
+        and b.user_id = #{userId}
+    </select>
 </mapper>

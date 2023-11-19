@@ -13,9 +13,14 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @SpringBootApplication
 @MapperScan(basePackages = "com.yicj.study.hello.repository.mapper")
-public class HelloApplication {
+public class HelloApplication/* extends SpringBootServletInitializer*/ {
 
     public static void main(String[] args) {
         SpringApplication.run(HelloApplication.class, args) ;
     }
+
+    /*@Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(HelloApplication.class) ;
+    }*/
 }

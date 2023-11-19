@@ -1,6 +1,9 @@
 package com.yicj.study.hello.shiro;
 
+import com.yicj.study.hello.service.PermissionService;
+import com.yicj.study.hello.service.RoleService;
 import com.yicj.study.hello.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -8,10 +11,8 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -21,13 +22,14 @@ import java.util.Map;
  * @see org.apache.shiro.web.filter.mgt.DefaultFilter
  */
 @Configuration
+@RequiredArgsConstructor
 public class ShiroConfiguration {
 
     private final UserService userService  ;
 
-    public ShiroConfiguration(UserService userService) {
-        this.userService = userService;
-    }
+    private final RoleService roleService ;
+
+    private final PermissionService permissionService ;
 
     /** --------------------------------- 配置Shiro  start---------------------------------**/
     @Bean
@@ -42,6 +44,7 @@ public class ShiroConfiguration {
         Map<String,String> filterChainDefinitionMap =  new LinkedHashMap<>() ;
         filterChainDefinitionMap.put("/index", "authc") ;
         filterChainDefinitionMap.put("/login", "anon") ;
+        filterChainDefinitionMap.put("/userAdd", "roles[ADMIN]") ;
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean ;
     }
@@ -54,7 +57,7 @@ public class ShiroConfiguration {
 
     @Bean
     public AuthorizingRealm authorizingRealm(){
-        AuthRealm authRealm = new AuthRealm(userService);
+        AuthRealm authRealm = new AuthRealm(userService, roleService, permissionService);
         authRealm.setCredentialsMatcher(credentialsMatcher());
         return authRealm ;
     }

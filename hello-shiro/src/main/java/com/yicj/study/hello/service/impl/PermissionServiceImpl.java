@@ -5,6 +5,10 @@ import com.yicj.study.hello.repository.entity.Permission;
 import com.yicj.study.hello.service.PermissionService;
 import com.yicj.study.hello.repository.mapper.PermissionMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
 * @author yichengjie
@@ -15,6 +19,13 @@ import org.springframework.stereotype.Service;
 public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permission>
     implements PermissionService{
 
+    @Override
+    public List<Permission> listByRoleIdList(List<Integer> roleIdList) {
+        if (CollectionUtils.isEmpty(roleIdList)){
+            return Collections.emptyList() ;
+        }
+        return this.baseMapper.listByRoleIdList(roleIdList);
+    }
 }
 
 

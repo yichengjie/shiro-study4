@@ -26,7 +26,7 @@ public class User implements Serializable {
      * 用户id
      */
     @TableId(type = IdType.AUTO)
-    private Integer uid;
+    private Integer id;
 
     /**
      * 用户名称
@@ -38,5 +38,6 @@ public class User implements Serializable {
      */
     private String password;
 
+    @TableField(exist = false)
     private Set<Role> roles = new HashSet<>() ;
 }

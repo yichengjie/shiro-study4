@@ -2,6 +2,9 @@ package com.yicj.study.hello.repository.mapper;
 
 import com.yicj.study.hello.repository.entity.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author yichengjie
@@ -11,6 +14,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface PermissionMapper extends BaseMapper<Permission> {
 
+    List<Permission> listByRoleIdList(@Param("roleIdList") List<Integer> roleIdList) ;
 }
 
 

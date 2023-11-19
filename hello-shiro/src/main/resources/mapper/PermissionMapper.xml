@@ -13,4 +13,15 @@
     <sql id="Base_Column_List">
         id,name,url
     </sql>
+
+    <select id="listByRoleIdList" resultType="com.yicj.study.hello.repository.entity.Permission">
+        select a.id, a.name, a.url
+        from sys_permission a, sys_role_permission b
+        where a.id = b.permission_id
+        and b.role_id in
+        <foreach item="item" index="index" collection="roleIdList"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
 </mapper>

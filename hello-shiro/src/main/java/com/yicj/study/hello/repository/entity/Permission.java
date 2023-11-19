@@ -14,11 +14,15 @@ import lombok.Data;
 @TableName(value ="sys_permission")
 @Data
 public class Permission implements Serializable {
+
+    @TableField(exist = false)
+    private static final long serialVersionUID = 1L;
+
     /**
      * 权限id
      */
     @TableId(type = IdType.AUTO)
-    private Integer pid;
+    private Integer id;
 
     /**
      * 权限名称
@@ -30,6 +34,4 @@ public class Permission implements Serializable {
      */
     private String url;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

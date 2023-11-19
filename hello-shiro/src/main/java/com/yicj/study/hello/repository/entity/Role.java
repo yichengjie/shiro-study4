@@ -23,14 +23,16 @@ public class Role implements Serializable {
      * 角色id
      */
     @TableId(type = IdType.AUTO)
-    private Integer rid;
+    private Integer id;
 
     /**
      * 角色名称
      */
-    private String rname;
+    private String name;
 
+    @TableField(exist = false)
     private Set<Permission> permissions = new HashSet<>();
 
+    @TableField(exist = false)
     private Set<User> users = new HashSet<>() ;
 }

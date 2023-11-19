@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.plaf.PanelUI;
 
 /**
  * @author yicj
@@ -27,6 +28,12 @@ public class HelloController {
     @RequestMapping("/index")
     public String index(){
         return "index" ;
+    }
+
+    @RequestMapping("/userAdd")
+    public String userAdd(){
+
+        return "user-add" ;
     }
 
     @RequestMapping("/loginUser")
