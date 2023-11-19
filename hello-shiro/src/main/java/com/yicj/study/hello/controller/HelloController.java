@@ -6,8 +6,11 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.servlet.http.HttpSession;
 
 /**
@@ -32,15 +35,26 @@ public class HelloController {
         return "login" ;
     }
 
+    @RequestMapping("/unauthorized")
+    public String unauthorized(){
+        return "unauthorized" ;
+    }
+
     @RequestMapping("/index")
     public String index(){
         return "index" ;
     }
 
-    @RequestMapping("/userAdd")
-    public String userAdd(){
+    @ResponseBody
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin success" ;
+    }
 
-        return "user-add" ;
+    @ResponseBody
+    @RequestMapping("/edit")
+    public String edit(){
+        return "edit success" ;
     }
 
     @RequestMapping("/loginUser")

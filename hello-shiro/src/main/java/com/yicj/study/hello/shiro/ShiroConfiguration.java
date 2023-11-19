@@ -46,8 +46,10 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/login", "anon") ;
         // 登录操作放开限制
         filterChainDefinitionMap.put("/loginUser", "anon") ;
+        filterChainDefinitionMap.put("/admin", "roles[ADMIN]") ;
+        filterChainDefinitionMap.put("edit", "perms[edit]") ;
+        // 注意这个顺序很重要，如果把这一样放前面，则其后面的权限配置将不生效
         filterChainDefinitionMap.put("/**", "user") ;
-        filterChainDefinitionMap.put("/userAdd", "roles[ADMIN]") ;
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean ;
     }

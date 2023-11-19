@@ -32,7 +32,9 @@ public class AuthRealm extends AuthorizingRealm {
     // 授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        User user = (User) principals.fromRealm(this.getClass().getName()).iterator().next();
+        User user = (User) principals.fromRealm(this.getClass().getName())
+                .iterator()
+                .next();
         List<Role> roleList = roleService.listByUserId(user.getId());
         List<Integer> roleIdList = roleList.stream()
                 .map(Role::getId)
