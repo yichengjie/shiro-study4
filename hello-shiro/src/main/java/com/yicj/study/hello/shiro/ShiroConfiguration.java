@@ -44,6 +44,9 @@ public class ShiroConfiguration {
         Map<String,String> filterChainDefinitionMap =  new LinkedHashMap<>() ;
         filterChainDefinitionMap.put("/index", "authc") ;
         filterChainDefinitionMap.put("/login", "anon") ;
+        // 登录操作放开限制
+        filterChainDefinitionMap.put("/loginUser", "anon") ;
+        filterChainDefinitionMap.put("/**", "user") ;
         filterChainDefinitionMap.put("/userAdd", "roles[ADMIN]") ;
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean ;

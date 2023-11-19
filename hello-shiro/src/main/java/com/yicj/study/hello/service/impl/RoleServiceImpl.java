@@ -19,9 +19,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role>
 
     @Override
     public List<Role> listByUserId(Integer userId) {
-
-
-        return null;
+        return this.baseMapper.listByUserId(userId);
     }
 }
 
