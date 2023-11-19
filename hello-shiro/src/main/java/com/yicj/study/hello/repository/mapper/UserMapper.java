@@ -2,6 +2,7 @@ package com.yicj.study.hello.repository.mapper;
 
 import com.yicj.study.hello.repository.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author yichengjie
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-11-18 19:25:04
 * @Entity com.yicj.study.hello.repository.entity.User
 */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
 }

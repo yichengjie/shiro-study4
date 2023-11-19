@@ -2,6 +2,7 @@ package com.yicj.study.hello.repository.mapper;
 
 import com.yicj.study.hello.repository.entity.Permission;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 * @createDate 2023-11-18 19:38:01
 * @Entity com.yicj.study.hello.repository.entity.Permission
 */
+@Mapper
 public interface PermissionMapper extends BaseMapper<Permission> {
 
     List<Permission> listByRoleIdList(@Param("roleIdList") List<Integer> roleIdList) ;

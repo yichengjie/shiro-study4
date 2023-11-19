@@ -5,6 +5,7 @@ import com.yicj.study.hello.service.RoleService;
 import com.yicj.study.hello.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.apache.shiro.authc.credential.CredentialsMatcher;
+import org.apache.shiro.cache.MemoryConstrainedCacheManager;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -49,6 +50,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/admin", "roles[ADMIN]") ;
         filterChainDefinitionMap.put("edit", "perms[edit]") ;
         // 注意这个顺序很重要，如果把这一样放前面，则其后面的权限配置将不生效
+        filterChainDefinitionMap.put("/druid/*", "anon") ;
         filterChainDefinitionMap.put("/**", "user") ;
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean ;
@@ -64,6 +66,8 @@ public class ShiroConfiguration {
     public AuthorizingRealm authorizingRealm(){
         AuthRealm authRealm = new AuthRealm(userService, roleService, permissionService);
         authRealm.setCredentialsMatcher(credentialsMatcher());
+        // 指定缓存
+        authRealm.setCacheManager(new MemoryConstrainedCacheManager());
         return authRealm ;
     }
 
